@@ -3,7 +3,7 @@ create database payroll_service
 use payroll_service
 
 create table employee_payroll(
-Employee_ID int identity(1,1),--id is auto increment by 1
+Employee_ID int identity(1,1) ,--id is auto increment by 1
 Employee_Name varchar(255),
 Employee_Salary int,
 StartDate Date,
@@ -100,4 +100,48 @@ select * from employee_payroll
 
 update employee_payroll set Employee_Name='TERISSA' where Employee_ID=6
 
-select * from employee_payroll where Employee_Name='TERISSA'--shows all details of terissa
+select * from employee_payroll where Employee_Name='TERISSA'--shows all details of teriss
+
+use payroll_service
+
+ALTER table employee_payroll
+Add PRIMARY KEY (Employee_ID)----primary key is added for employee_payroll
+
+-----------------------------------------create new table
+
+create table employee_department
+(
+Department_ID int identity(1000,1),
+Employee_Id int foreign key references employee_payroll(Employee_ID)
+)
+
+select * from employee_department
+
+INSERT INTO employee_department values(1)
+INSERT INTO employee_department values(2)
+INSERT INTO employee_department values(3)
+INSERT INTO employee_department values(4)
+INSERT INTO employee_department values(5)
+INSERT INTO employee_department values(6)
+INSERT INTO employee_department values(7)
+INSERT INTO employee_department values(8)
+INSERT INTO employee_department values(9)
+
+------using functions 
+select sum(Employee_Salary) from employee_payroll inner join employee_department
+on employee_department.Employee_Id=employee_payroll.Employee_ID
+
+
+select avg(Employee_Salary) from employee_payroll inner join employee_department
+on employee_department.Employee_Id=employee_payroll.Employee_ID 
+
+
+
+select min(Employee_Salary) from employee_payroll inner join employee_department
+on employee_department.Employee_Id=employee_payroll.Employee_ID  -- shows minimum salary of employees
+
+select max(Employee_Salary) from employee_payroll inner join employee_department
+on employee_department.Employee_Id=employee_payroll.Employee_ID  -- shows minimum salary of employees
+
+
+
