@@ -85,3 +85,19 @@ Deductions float,
 Taxable_pay float,
 Tax float,
 NetPay float
+
+
+update employee_payroll set BasicPAY=20000, Deductions=1000,Taxable_Pay=2000,Tax=300,NetPay=19000 where Employee_ID=2 
+update employee_payroll set BasicPAY=18000, Deductions=2000,Taxable_Pay=1500,Tax=400,NetPay=17000 where Employee_ID=3 
+update employee_payroll set BasicPAY=22000, Deductions=1000,Taxable_Pay=1200,Tax=200,NetPay=21000 where Employee_ID=4 
+update employee_payroll set BasicPAY=18000, Deductions=1000,Taxable_Pay=1300,Tax=300,NetPay=17000 where Employee_ID=5 
+update employee_payroll set BasicPAY=22000, Deductions=2000,Taxable_Pay=1400,Tax=100,NetPay=21000 where Employee_ID=6 
+update employee_payroll set BasicPAY=19000, Deductions=1000,Taxable_Pay=1100,Tax=300,NetPay=18000 where Employee_ID=7 
+update employee_payroll set BasicPAY=25000, Deductions=1000,Taxable_Pay=1700,Tax=200,NetPay=24000 where Employee_ID=8 
+update employee_payroll set BasicPAY=26000, Deductions=2000,Taxable_Pay=1600,Tax=400,NetPay=24000 where Employee_ID=9 
+
+select * from employee_payroll
+
+update employee_payroll set Employee_Name='TERISSA' where Employee_ID=6
+
+select * from employee_payroll where Employee_Name='TERISSA'--shows all details of terissa
