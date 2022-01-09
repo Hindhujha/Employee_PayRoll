@@ -35,3 +35,25 @@ update employee_payroll set Gender='F'
 update employee_payroll set Gender='M' where Employee_Name='RAM' 
 update employee_payroll set Gender='M' where Employee_Name='RAVI' 
 select * from employee_payroll
+
+----inserting multiple persons
+INSERT INTO employee_payroll values('CHRIS',20000,'2021-01-07','M')
+INSERT INTO employee_payroll values('ANITA',26000,'2021-05-09','F')
+INSERT INTO employee_payroll values('PRIYA',22000,'2021-07-01','F')
+INSERT INTO employee_payroll values('KRIS',29000,'2021-08-10','M')
+INSERT INTO employee_payroll values('KEVIN',28000,'2021-08-20','M')
+
+------using functions 
+select count(Employee_Name) from employee_payroll ----no.of.employees
+select count(Employee_Name) from employee_payroll where Gender='F' GROUP BY Gender ---shows no.of female employees
+select count(Employee_Name) from employee_payroll where Gender='M' GROUP BY Gender ---shows no.of male employees
+
+select sum(Employee_Salary) from employee_payroll where  Gender='F' GROUP BY Gender ---shows sum of female employees salary
+select sum(Employee_Salary) from employee_payroll where  Gender='M' GROUP BY Gender ---shows sum of male employees salary
+
+select avg(Employee_Salary) from employee_payroll where  Gender='F' GROUP BY Gender ---shows average of female employees salary
+select avg(Employee_Salary) from employee_payroll where  Gender='M' GROUP BY Gender---shows average of female employees salary
+
+select min(Employee_Salary) from employee_payroll -- shows minimum salary of employees
+
+select max(Employee_Salary) from employee_payroll  -- shows minimum salary of employees
