@@ -77,3 +77,11 @@ update employee_payroll set Phone_Number='9893456880' , Department='Finance' whe
 update employee_payroll set Phone_Number='9892389012' , Department='Marketing' where Employee_Name='KEVIN' 
 
 update employee_payroll set Employee_Address='Chennai'--default value
+
+---payroll table extends
+Alter Table employee_payroll 
+add BasicPay float,
+Deductions float,
+Taxable_pay float,
+Tax float,
+NetPay float
