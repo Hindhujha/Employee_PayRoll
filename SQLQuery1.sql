@@ -57,3 +57,23 @@ select avg(Employee_Salary) from employee_payroll where  Gender='M' GROUP BY Gen
 select min(Employee_Salary) from employee_payroll -- shows minimum salary of employees
 
 select max(Employee_Salary) from employee_payroll  -- shows minimum salary of employees
+
+----extend the payroll employee table
+Alter Table employee_payroll
+add Phone_Number varchar(50),
+Employee_Address varchar(100),
+Department varchar(100)
+
+select * from employee_payroll
+
+update employee_payroll set Phone_Number='9123456789', Department='Sales' where Employee_Name='RAM' 
+update employee_payroll set Phone_Number='9893456789' , Department='Marketing' where Employee_Name='RAVI' 
+update employee_payroll set Phone_Number='9893456222' , Department='Design' where Employee_Name='ANU' 
+update employee_payroll set Phone_Number='9893459876' , Department='Design' where Employee_Name='ANNIE' 
+update employee_payroll set Phone_Number='9891458922' , Department='Sales' where Employee_Name='CHRIS' 
+update employee_payroll set Phone_Number='9893432120' , Department='Marketing' where Employee_Name='ANITA' 
+update employee_payroll set Phone_Number='9765156222' , Department='Finance' where Employee_Name='PRIYA' 
+update employee_payroll set Phone_Number='9893456880' , Department='Finance' where Employee_Name='KRIS' 
+update employee_payroll set Phone_Number='9892389012' , Department='Marketing' where Employee_Name='KEVIN' 
+
+update employee_payroll set Employee_Address='Chennai'--default value
