@@ -13,4 +13,5 @@ INSERT INTO employee_payroll values('RAM',25000,'2021-01-02')
 INSERT INTO employee_payroll values('RAVI',23000,'2021-05-06')
 INSERT INTO employee_payroll values('ANU',22000,'2021-07-08')
 INSERT INTO employee_payroll values('ANNIE',24000,'2021-07-05')
-
+--retrieve employee details from table
+select * from employee_payroll
