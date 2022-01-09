@@ -129,11 +129,17 @@ INSERT INTO employee_department values(9)
 
 ------using functions 
 select sum(Employee_Salary) from employee_payroll inner join employee_department
-on employee_department.Employee_Id=employee_payroll.Employee_ID
+on employee_department.Employee_Id=employee_payroll.Employee_ID where Gender='F' GROUP BY Gender
+
+select sum(Employee_Salary) from employee_payroll inner join employee_department
+on employee_department.Employee_Id=employee_payroll.Employee_ID where Gender='M' GROUP BY Gender
 
 
 select avg(Employee_Salary) from employee_payroll inner join employee_department
-on employee_department.Employee_Id=employee_payroll.Employee_ID 
+on employee_department.Employee_Id=employee_payroll.Employee_ID where Gender='M' GROUP BY Gender
+
+select avg(Employee_Salary) from employee_payroll inner join employee_department
+on employee_department.Employee_Id=employee_payroll.Employee_ID where Gender='F' GROUP BY Gender
 
 
 
@@ -144,4 +150,14 @@ select max(Employee_Salary) from employee_payroll inner join employee_department
 on employee_department.Employee_Id=employee_payroll.Employee_ID  -- shows minimum salary of employees
 
 
+select * from employee_department
 
+select employee_payroll.Employee_Name from employee_payroll inner join employee_department
+on employee_department.Employee_Id=employee_payroll.Employee_ID
+
+select Employee_Salary from employee_payroll inner join employee_department
+on employee_department.Employee_Id=employee_payroll.Employee_ID
+
+
+select StartDate from employee_payroll inner join employee_department
+on employee_department.Employee_Id=employee_payroll.Employee_ID where StartDate BETWEEN CAST('2021-05-06' AS DATE) AND  CAST('2021-07-08' AS DATE) ;
