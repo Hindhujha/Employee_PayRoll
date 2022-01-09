@@ -7,6 +7,7 @@ Employee_ID int identity(1,1),--id is auto increment by 1
 Employee_Name varchar(255),
 Employee_Salary int,
 StartDate Date,
+
 )
 --employee details inserted into table
 INSERT INTO employee_payroll values('RAM',25000,'2021-01-02')
@@ -21,3 +22,16 @@ select Employee_Salary from employee_payroll where Employee_Name='ANNIE'
 
 --retrieve  employee detail from start dates
 select Employee_Name from employee_payroll where StartDate BETWEEN CAST('2021-05-06' AS DATE) AND  CAST('2021-07-08' AS DATE) ;
+
+
+--Altered table by adding a new coloumn gender
+Alter Table employee_payroll 
+Add Gender char(1)
+
+---set the value for gender
+update employee_payroll set Gender='F'
+
+----update gender for ram and ravi
+update employee_payroll set Gender='M' where Employee_Name='RAM' 
+update employee_payroll set Gender='M' where Employee_Name='RAVI' 
+select * from employee_payroll
